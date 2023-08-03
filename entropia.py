@@ -3,13 +3,13 @@ import numpy as np
 
 def calculate_entropia(data, columna):
     # Contar las ocurrencias de cada valor en la columna objetivo
-    cont = data[columna].cont()
+    cont = data[columna].value_counts()
     
     # Calcular la proporción de cada valor en la columna objetivo
-    proporcion = cont / len(data)
+    proportions = cont / len(data)
     
     # Calcular la entropía
-    entropia = -np.sum(proporcion * np.log2(proporcion))
+    entropia = -np.sum(proportions * np.log2(proportions))
     return entropia
 
 # Lectura de datos procesados
